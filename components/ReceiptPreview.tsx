@@ -1,4 +1,4 @@
-import { ArrowLeft, Download, Printer } from "lucide-react";
+import { ArrowLeft, Printer } from "lucide-react";
 import { CustomerData } from "../App";
 
 interface ReceiptPreviewProps {
@@ -13,11 +13,6 @@ export default function ReceiptPreview({
   const handlePrint = () => {
     window.print();
   };
-
-  const handleDownload = () => {
-    alert("ฟังก์ชันดาวน์โหลด PDF จะพร้อมใช้งานเร็วๆ นี้");
-  };
-
   if (!customerData) {
     return (
       <div className="text-center" style={{ padding: '3rem 0' }}>

@@ -1,4 +1,4 @@
-import { ArrowLeft, Download, Printer } from "lucide-react";
+import { ArrowLeft, Printer } from "lucide-react";
 import { CustomerData } from "../App";
 
 interface RegistrationFormPreviewProps {
@@ -12,10 +12,6 @@ export default function RegistrationFormPreview({
 }: RegistrationFormPreviewProps) {
   const handlePrint = () => {
     window.print();
-  };
-
-  const handleDownload = () => {
-    alert("ฟังก์ชันดาวน์โหลด PDF จะพร้อมใช้งานเร็วๆ นี้");
   };
 
   if (!customerData) {
