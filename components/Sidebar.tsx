@@ -1,9 +1,5 @@
 import {
-  LayoutDashboard,
   Users,
-  Receipt,
-  FileText,
-  ChevronLeft,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -25,7 +21,6 @@ export default function Sidebar({
   currentPage,
   onNavigate,
   isOpen,
-  onToggle,
 }: SidebarProps) {
   return (
     <aside

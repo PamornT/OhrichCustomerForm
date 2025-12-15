@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Save, Eye, FileText } from 'lucide-react';
+import { Eye, FileText } from 'lucide-react';
 import { CustomerData } from '../App';
 
 interface CustomerFormProps {

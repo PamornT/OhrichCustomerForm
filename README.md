@@ -48,11 +48,9 @@ git --version
 
 ```bash
 # Clone repository (ถ้ามี)
-git clone <repository-url>
-cd admin-web-ui
+git clone https://github.com/PamornT/OhrichCustomerForm.git
+cd OhrichCustomerForm
 
-# หรือ ถ้าได้โค้ดมาแล้ว ให้ cd เข้าไปในโฟลเดอร์โปรเจกต์
-cd /path/to/admin-web-ui
 ```
 
 ### 4. ติดตั้ง Dependencies
@@ -89,18 +87,6 @@ http://localhost:3000
 ```
 
 ## การใช้งาน
-
-### การ Login
-
-- Username: `admin01`, `admin02`, `admin03`, `admin04`, หรือ `admin05`
-- Password: `pass1234`
-
-### เมนูหลัก
-
-1. **Dashboard** - หน้าภาพรวมข้อมูล
-2. **บันทึกข้อมูลลูกค้า** - กรอกข้อมูลลูกค้าและธุรกรรม
-3. **จัดการใบเสร็จ** - ดู แก้ไข ลบใบเสร็จ
-4. **Print แบบฟอร์ม** - พิมพ์เอกสารต่างๆ
 
 ### การพิมพ์เอกสาร
 
