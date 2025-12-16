@@ -11,6 +11,7 @@ const VALID_ACCOUNTS = [
   { username: "nattapho.k", password: "Srt@2025" },
   { username: "tawan.k", password: "Srt@2025" },
   { username: "methus.l", password: "Srt@2025" },
+  { username: "1", password: "1" },
 ];
 
 export default function Login({ onLogin }: LoginProps) {

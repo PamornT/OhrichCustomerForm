@@ -5,6 +5,7 @@ import DashboardHome from './components/DashboardHome';
 import CustomerForm from './components/CustomerForm';
 import ReceiptPreview from './components/ReceiptPreview';
 import RegistrationFormPreview from './components/RegistrationFormPreview';
+import AgreementPreview from './components/AgreementPreview';
 
 export interface CustomerData {
   fullName: string;
@@ -72,6 +73,10 @@ export interface CustomerData {
   purposeOther?: string; // For "อื่นๆ" option
   transactionDate: string; // วันที่ทำธุรกรรม
   transactionNo: string; // เลขที่ธุรกรรม
+  runNo: string; // Run No
+  
+  // ID Card Image
+  idCardImage?: string; // Base64 encoded image
 }
 
 export default function App() {
@@ -130,6 +135,12 @@ export default function App() {
         <RegistrationFormPreview 
           customerData={customerData}
           onBack={() => handleNavigate('customer-form')}
+        />
+      )}
+      {currentPage === 'agreement-preview' && (
+        <AgreementPreview 
+          customerData={customerData}
+          onNavigate={handleNavigate}
         />
       )}
     </Dashboard>
