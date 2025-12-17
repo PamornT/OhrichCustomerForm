@@ -224,7 +224,7 @@ export default function AgreementPreview({ customerData, onNavigate }: Agreement
             <img
               src={customerData.idCardImage}
               alt="ID Card"
-              className="max-w-md w-full h-auto border border-gray-300 rounded"
+              className="h-50 w-auto max-w-md border border-gray-300 rounded"
             />
           </div>
         )}

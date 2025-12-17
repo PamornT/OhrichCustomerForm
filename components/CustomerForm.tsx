@@ -483,7 +483,7 @@ export default function CustomerForm({
                       <img
                         src={formData.idCardImage}
                         alt="ID Card Preview"
-                        className="max-w-md w-full h-auto rounded-lg border border-gray-200"
+                        className="h-50 w-auto max-w-md rounded-lg border border-gray-200"
                       />
                     </div>
                     <button
