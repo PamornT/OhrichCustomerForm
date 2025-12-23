@@ -16,8 +16,14 @@ export default function RegistrationFormPreview({
 
   if (!customerData) {
     return (
-      <div className="text-center" style={{ padding: '3rem 0' }}>
-        <p className="text-gray-600" style={{ marginBottom: '1rem' }}>
+      <div
+        className="text-center"
+        style={{ padding: "3rem 0" }}
+      >
+        <p
+          className="text-gray-600"
+          style={{ marginBottom: "1rem" }}
+        >
           ไม่พบข้อมูล กรุณากรอกข้อมูลก่อน
         </p>
         <button
@@ -32,21 +38,24 @@ export default function RegistrationFormPreview({
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="flex items-center justify-between print:hidden" style={{ marginBottom: '1.5rem' }}>
+      <div
+        className="flex items-center justify-between print:hidden"
+        style={{ marginBottom: "1.5rem" }}
+      >
         <button
           onClick={onBack}
           className="flex items-center text-gray-600 hover:text-gray-800"
-          style={{ gap: '0.5rem' }}
+          style={{ gap: "0.5rem" }}
         >
           <ArrowLeft className="w-5 h-5" />
           กลับ
         </button>
 
-        <div className="flex" style={{ gap: '0.75rem' }}>
+        <div className="flex" style={{ gap: "0.75rem" }}>
           <button
             onClick={handlePrint}
             className="flex items-center bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-            style={{ gap: '0.5rem', padding: '0.5rem 1rem' }}
+            style={{ gap: "0.5rem", padding: "0.5rem 1rem" }}
           >
             <Printer className="w-5 h-5" />
             Print
@@ -55,10 +64,24 @@ export default function RegistrationFormPreview({
       </div>
 
       {/* Registration Form */}
-      <div className="print-area bg-white border border-gray-300 print:border-0" style={{ padding: '0.2rem 2.5rem' }}>
+      <div
+        className="print-area bg-white border border-gray-300 print:border-0"
+        style={{ padding: "0.2rem 2.5rem" }}
+      >
         {/* Header */}
-        <div className="flex justify-between items-center" style={{ marginBottom: '0', marginTop: '0', paddingTop: '0', paddingBottom: '0' }}>
-          <div className="flex items-center" style={{ gap: '1rem' }}>
+        <div
+          className="flex justify-between items-center"
+          style={{
+            marginBottom: "0",
+            marginTop: "0",
+            paddingTop: "0",
+            paddingBottom: "0",
+          }}
+        >
+          <div
+            className="flex items-center"
+            style={{ gap: "1rem" }}
+          >
             <img
               src="https://www.ohrich.com/_astro/logo.CMXTdngz_1RnVwL.webp"
               alt="OH! RICH Logo"
@@ -74,38 +97,67 @@ export default function RegistrationFormPreview({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 items-start justify-items-end" style={{ marginBottom: '0.1rem', paddingTop: '0rem', marginTop: '0rem' }}>
+        <div
+          className="grid grid-cols-1 items-start justify-items-end"
+          style={{
+            marginBottom: "0.1rem",
+            paddingTop: "0rem",
+            marginTop: "0rem",
+          }}
+        >
           <div>
             <div className="flex items-end">
               <span className="text-[10px]">วันที่</span>
-              <span className="text-sm border-b border-black" style={{ padding: '0.1rem 2rem' }}>
+              <span
+                className="text-sm border-b border-black"
+                style={{ padding: "0.1rem 2rem" }}
+              >
                 {customerData.transactionDate
-                  ? new Date(customerData.transactionDate).toLocaleDateString(
-                      "en-GB"
-                    )
+                  ? new Date(
+                      customerData.transactionDate,
+                    ).toLocaleDateString("en-GB")
                   : customerData.registrationDate
-                  ? new Date(customerData.registrationDate).toLocaleDateString(
-                      "en-GB"
-                    )
-                  : new Date().toLocaleDateString("en-GB")}
+                    ? new Date(
+                        customerData.registrationDate,
+                      ).toLocaleDateString("en-GB")
+                    : new Date().toLocaleDateString("en-GB")}
               </span>
             </div>
-            <div className="text-[10px] text-gray-600" style={{ marginTop: '0rem', marginRight: '0.5rem' }}>
+            <div
+              className="text-[10px] text-gray-600"
+              style={{
+                marginTop: "0rem",
+                marginRight: "0.5rem",
+              }}
+            >
               DATE
             </div>
           </div>
         </div>
 
         {/* Applicant Details */}
-        <div style={{ marginBottom: '0.25rem' }}>
-          <div className="bg-[#97d700] text-[10px] text-center text-black" style={{ padding: '0.25rem 1rem', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: "0.25rem" }}>
+          <div
+            className="bg-[#97d700] text-[10px] text-center text-black"
+            style={{
+              padding: "0.25rem 1rem",
+              marginBottom: "0.5rem",
+            }}
+          >
             รายละเอียดของผู้ใช้บริการโอนเงิน (DETAILS OF
             APPLICANT)
           </div>
 
-          <div className="space-y-2 text-[10px]">{/* space-y-2 จะใช้งานได้จาก globals.css แล้ว */}
+          <div className="space-y-2 text-[10px]">
+            {/* space-y-2 จะใช้งานได้จาก globals.css แล้ว */}
             {/* Row 1 */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -135,7 +187,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -188,7 +246,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 3 */}
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -231,7 +295,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 4 */}
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -274,7 +344,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 5 */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -284,7 +360,13 @@ export default function RegistrationFormPreview({
                     {customerData.email || ""}
                   </div>
                 </div>
-                <div className="text-[10px] text-gray-500 mt-0"  style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+                <div
+                  className="text-[10px] text-gray-500 mt-0"
+                  style={{
+                    marginBottom: "0rem",
+                    marginTop: "0rem",
+                  }}
+                >
                   E-MAIL ADDRESS
                 </div>
               </div>
@@ -297,14 +379,26 @@ export default function RegistrationFormPreview({
                     {customerData.occupation || ""}
                   </div>
                 </div>
-                <div className="text-[10px] text-gray-500 mt-0"  style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+                <div
+                  className="text-[10px] text-gray-500 mt-0"
+                  style={{
+                    marginBottom: "0rem",
+                    marginTop: "0rem",
+                  }}
+                >
                   OCCUPATION
                 </div>
               </div>
             </div>
 
             {/* Row 6 */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -334,7 +428,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Checkbox */}
-            <div className="flex items-center gap-2 pt-1"  style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="flex items-center gap-2 pt-1"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <input
                 type="checkbox"
                 id="sameAddress"
@@ -357,9 +457,21 @@ export default function RegistrationFormPreview({
         <div className="mb-1">
           <div className="space-y-2 text-[10px]">
             {/* Representative Name */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
-                <div className="flex items-center gap-2 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+                <div
+                  className="flex items-center gap-2 pb-0"
+                  style={{
+                    marginBottom: "0rem",
+                    marginTop: "0rem",
+                  }}
+                >
                   <span className="text-[10px] text-black whitespace-nowrap">
                     ชื่อ-นามสกุลผู้โอน แทนนิติบุคคล
                     (นาย/นาง/นางสาว)
@@ -373,12 +485,19 @@ export default function RegistrationFormPreview({
                 </div>
               </div>
               <div>
-                <div className="flex items-center gap-2 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+                <div
+                  className="flex items-center gap-2 pb-0"
+                  style={{
+                    marginBottom: "0rem",
+                    marginTop: "0rem",
+                  }}
+                >
                   <span className="text-[10px] text-black whitespace-nowrap">
                     สัญชาติ
                   </span>
                   <div className="border-b border-black pb-1 flex-1">
-                    {customerData.representativeNationality || ""}
+                    {customerData.representativeNationality ||
+                      ""}
                   </div>
                 </div>
                 <div className="text-[10px] text-gray-500 mt-0">
@@ -388,7 +507,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Representative ID and DOB */}
-            <div className="grid grid-cols-2 gap-8 mt-1 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 mt-1 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -443,7 +568,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row with Corporate Name and Registered In */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -470,7 +601,13 @@ export default function RegistrationFormPreview({
                     </div>
                   </div>
                   <div>
-                    <div className="grid grid-cols-1 gap-2 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+                    <div
+                      className="grid grid-cols-1 gap-2 pb-0"
+                      style={{
+                        marginBottom: "0rem",
+                        marginTop: "0rem",
+                      }}
+                    >
                       <div>
                         <div className="flex items-left gap-2">
                           <input
@@ -528,7 +665,13 @@ export default function RegistrationFormPreview({
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -570,7 +713,13 @@ export default function RegistrationFormPreview({
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -612,7 +761,13 @@ export default function RegistrationFormPreview({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-1 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -639,7 +794,13 @@ export default function RegistrationFormPreview({
 
           <div className="space-y-2 text-[10px]">
             {/* Row 1 */}
-            <div className="grid grid-cols-2 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-2 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -669,7 +830,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -712,14 +879,20 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 3 */}
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
                     ชื่อบัญชี
                   </span>
                   <div className="border-b border-black pb-1 flex-1">
-                    {customerData.beneficiaryName || ""}
+                    {customerData.beneficiaryAccountName || ""}
                   </div>
                 </div>
                 <div className="text-[10px] text-gray-500 mt-0">
@@ -755,7 +928,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Row 4 */}
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -815,7 +994,10 @@ export default function RegistrationFormPreview({
         </div>
 
         {/* Transaction Details */}
-        <div className=""  style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+        <div
+          className=""
+          style={{ marginBottom: "0rem", marginTop: "0rem" }}
+        >
           <div className="bg-[#97d700] text-[10px] text-black text-center px-4 py-1 mb-2">
             วัตถุประสงค์สำหรับการโอนเงินไปต่างประเทศ (PURPOSE OF
             FUNDS TRANSFER)
@@ -823,7 +1005,13 @@ export default function RegistrationFormPreview({
 
           <div className="space-y-2 text-[10px]">
             {/* Radio buttons in 2x2 grid */}
-            <div className="grid grid-cols-3 gap-4"  style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-4"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <input
@@ -949,7 +1137,13 @@ export default function RegistrationFormPreview({
             </div>
 
             {/* Financial details in 3 columns */}
-            <div className="grid grid-cols-3 gap-8 pt-2 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pt-2 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -991,7 +1185,13 @@ export default function RegistrationFormPreview({
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+            <div
+              className="grid grid-cols-3 gap-8 pb-0"
+              style={{
+                marginBottom: "0rem",
+                marginTop: "0rem",
+              }}
+            >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-black whitespace-nowrap">
@@ -1038,7 +1238,10 @@ export default function RegistrationFormPreview({
             reverse of this application
           </p>
 
-          <div className="grid grid-cols-1 justify-items-end gap-8 text-[10px] text-center mt-0 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+          <div
+            className="grid grid-cols-1 justify-items-end gap-8 text-[10px] text-center mt-0 pb-0"
+            style={{ marginBottom: "0rem", marginTop: "0rem" }}
+          >
             <div>
               <div className="border-b border-gray-400 w-64 mx-auto mb-1"></div>
               <p className="text-black">
@@ -1253,7 +1456,10 @@ export default function RegistrationFormPreview({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 justify-items-end gap-8 text-center mt-8 pb-0" style={{ marginBottom: '0rem', marginTop: '0rem' }}>
+        <div
+          className="grid grid-cols-1 justify-items-end gap-8 text-center mt-8 pb-0"
+          style={{ marginBottom: "0rem", marginTop: "0rem" }}
+        >
           <div>SRT FOREX COMPANY LIMITED</div>
         </div>
       </div>

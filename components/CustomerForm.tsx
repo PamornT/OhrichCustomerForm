@@ -93,7 +93,11 @@ export default function CustomerForm({
       };
 
       // Auto-calculate amounts
-      if (name === "amount" || name === "exchangeRate") {
+      if (
+        name === "amount" ||
+        name === "exchangeRate" ||
+        name === "transferFee"
+      ) {
         const amount =
           parseFloat(
             name === "amount" ? value : newData.amount,
@@ -105,7 +109,12 @@ export default function CustomerForm({
               : newData.exchangeRate,
           ) || 0;
         const baht = amount * rate;
-        const fee = parseFloat(newData.transferFee) || 0;
+        const fee =
+          parseFloat(
+            name === "transferFee"
+              ? value
+              : newData.transferFee,
+          ) || 0;
         newData.amountBaht = baht.toFixed(2);
         newData.totalAmount = (baht + fee).toFixed(2);
       }
@@ -253,7 +262,6 @@ export default function CustomerForm({
                 value={formData.fullName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Mr. Benjamin Graeme"
                 required
               />
             </div>
@@ -268,7 +276,6 @@ export default function CustomerForm({
                 value={formData.nationality}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Australia"
               />
             </div>
 
@@ -282,7 +289,6 @@ export default function CustomerForm({
                 value={formData.idCard}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="PB3449504"
                 required
               />
             </div>
@@ -310,7 +316,6 @@ export default function CustomerForm({
                 value={formData.address}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="493/15 Trok Wat Chan Nai"
               />
             </div>
 
@@ -324,7 +329,6 @@ export default function CustomerForm({
                 value={formData.subDistrict}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="บางคอแหลม"
               />
             </div>
 
@@ -338,7 +342,6 @@ export default function CustomerForm({
                 value={formData.district}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="บางคอแหลม"
               />
             </div>
 
@@ -352,7 +355,6 @@ export default function CustomerForm({
                 value={formData.province}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="กรุงเทพมหานคร"
               />
             </div>
 
@@ -366,7 +368,6 @@ export default function CustomerForm({
                 value={formData.postCode}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="10120"
               />
             </div>
 
@@ -380,7 +381,6 @@ export default function CustomerForm({
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="0812345678"
                 required
               />
             </div>
@@ -395,7 +395,6 @@ export default function CustomerForm({
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ben@verduno.co.th"
               />
             </div>
 
@@ -409,7 +408,6 @@ export default function CustomerForm({
                 value={formData.occupation}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Business Owner"
               />
             </div>
 
@@ -436,7 +434,6 @@ export default function CustomerForm({
                 value={formData.businessName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="NAME OF BUSINESS"
               />
             </div>
 
@@ -450,7 +447,6 @@ export default function CustomerForm({
                 value={formData.companyAddress}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="COMPANY ADDRESS"
               />
             </div>
 
@@ -534,7 +530,6 @@ export default function CustomerForm({
                 value={formData.representativeName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ชื่อผู้แทน"
               />
             </div>
 
@@ -548,7 +543,6 @@ export default function CustomerForm({
                 value={formData.representativeNationality}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="สัญชาติผูแทน"
               />
             </div>
 
@@ -562,7 +556,6 @@ export default function CustomerForm({
                 value={formData.representativeIdCard}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="เลขบัตรผู้แทน"
               />
             </div>
 
@@ -598,7 +591,6 @@ export default function CustomerForm({
                 value={formData.corporateName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="NAME OF CORPORATE"
               />
             </div>
 
@@ -659,7 +651,6 @@ export default function CustomerForm({
                 value={formData.corporateLocation}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="COMPANY ADDRESS"
               />
             </div>
 
@@ -673,7 +664,6 @@ export default function CustomerForm({
                 value={formData.corporateSubDistrict}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="SUB DISTRICT"
               />
             </div>
 
@@ -687,7 +677,6 @@ export default function CustomerForm({
                 value={formData.corporateDistrict}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="DISTRICT"
               />
             </div>
 
@@ -701,7 +690,6 @@ export default function CustomerForm({
                 value={formData.corporateProvince}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="PROVINCE"
               />
             </div>
 
@@ -715,7 +703,6 @@ export default function CustomerForm({
                 value={formData.corporatePostCode}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="POST CODE"
               />
             </div>
 
@@ -729,7 +716,6 @@ export default function CustomerForm({
                 value={formData.corporatePhone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="PHONE"
               />
             </div>
 
@@ -743,7 +729,6 @@ export default function CustomerForm({
                 value={formData.corporateEmail}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="E-MAIL ADDRESS"
               />
             </div>
           </div>
@@ -767,7 +752,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="VERDUNO AUSTRALIA PTY LIMITED"
               />
             </div>
 
@@ -781,7 +765,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryIdCard}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="IDENTIFICATION NO."
               />
             </div>
 
@@ -795,7 +778,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryAddress}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ADDRESS"
               />
             </div>
 
@@ -809,7 +791,6 @@ export default function CustomerForm({
                 value={formData.destinationCountry}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="DESTINATION COUNTRY"
               />
             </div>
 
@@ -823,7 +804,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryPhone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="PHONE"
               />
             </div>
 
@@ -837,7 +817,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryAccountName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ACCOUNT NAME"
               />
             </div>
 
@@ -851,7 +830,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryAccountNo}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="2017 3968"
               />
             </div>
 
@@ -865,7 +843,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryBank}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="COMMONWEALTH BANK"
               />
             </div>
 
@@ -879,7 +856,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryBranch}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="BRANCH"
               />
             </div>
 
@@ -893,7 +869,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryBankAddress}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="BANK ADDRESS"
               />
             </div>
 
@@ -907,7 +882,6 @@ export default function CustomerForm({
                 value={formData.beneficiarySwift}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="062 000"
               />
             </div>
 
@@ -921,7 +895,6 @@ export default function CustomerForm({
                 value={formData.beneficiaryEmail}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="E-MAIL ADDRESS"
               />
             </div>
 
@@ -935,7 +908,6 @@ export default function CustomerForm({
                 onChange={handleChange}
                 rows={3}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="REMARK"
               />
             </div>
           </div>
@@ -1010,7 +982,6 @@ export default function CustomerForm({
                   value={formData.purposeOther || ""}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="กรุณาระบุวัตถุประสงค์"
                 />
               </div>
             )}
@@ -1025,7 +996,6 @@ export default function CustomerForm({
                 value={formData.relationshipWithBeneficiary}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="RELATIONSHIP BETWEEN APPLICANT AND BENEFICIARY"
               />
             </div>
 
@@ -1039,7 +1009,6 @@ export default function CustomerForm({
                 value={formData.currency}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="เช่น AUD, USD, EUR, GBP"
               />
             </div>
 
@@ -1054,7 +1023,6 @@ export default function CustomerForm({
                 value={formData.amount}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="11,056.42"
               />
             </div>
 
@@ -1069,7 +1037,6 @@ export default function CustomerForm({
                 value={formData.exchangeRate}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="23.45"
               />
             </div>
 
@@ -1083,7 +1050,6 @@ export default function CustomerForm({
                 value={formData.amountBaht}
                 readOnly
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50"
-                placeholder="259,273.05"
               />
             </div>
 
@@ -1098,7 +1064,6 @@ export default function CustomerForm({
                 value={formData.transferFee}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="200"
               />
             </div>
 
@@ -1112,7 +1077,6 @@ export default function CustomerForm({
                 value={formData.totalAmount}
                 readOnly
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50"
-                placeholder="259,473.05"
               />
             </div>
           </div>
